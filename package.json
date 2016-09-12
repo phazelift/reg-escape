@@ -1,0 +1,26 @@
+{
+  "name": "reg-escape",
+  "version": "0.0.1",
+  "description": "Prepares a string to be used with new RegExp",
+  "main": "reg-escape.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phazelift/reg-escape"
+  },
+  "keywords": [
+    "regescape",
+    "escape",
+    "regexp",
+    "regular",
+    "expression"
+  ],
+  "author": "Dennis Raymondo van der Sluis <phazelift@gmail.com> (https://github.com/phazelift/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phazelift/reg-escape/issues"
+  },
+  "homepage": "https://github.com/phazelift/reg-escape"
+}
