@@ -1,6 +1,6 @@
 {
   "name": "reg-escape",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Prepares a string to be used with new RegExp",
   "main": "reg-escape.min.js",
   "scripts": {
