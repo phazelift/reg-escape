@@ -1,5 +1,5 @@
 //
-// reg-escape, prepare a string before creating a new RegExp.
+// reg-escape:	escapes special characters in a string so it can be used with RegExp
 //
 // MIT License
 //
