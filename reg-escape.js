@@ -24,8 +24,14 @@
 // SOFTWARE.
 //
 
+var
+	 types		= require( 'types.js' )
+	,moduleName	= 'reg-escape'
+;
+
+
+
 var regEscape= function( string ){
-	"use strict"
 
 	var escapedString= '';
 
@@ -37,6 +43,34 @@ var regEscape= function( string ){
 	return escapedString;
 };
 regEscape.SPECIAL_CHARS= [ '?', '\\', '[', ']', '(', ')', '*', '+', '.', '/', '|', '^', '$', '<', '>', '-', '&' ];
+
+
+
+//
+// creates a regular expression that can test for occurrance of characters in a string
+// test is to be limited to a specific amount of characters by passing a lower and upper range
+// passing only a string and lower value will limit the amount of accepted characters to lower's value
+// no lower value will limit to 1 character
+//
+regEscape.limitOccur= function( string, lower, upper, flags ){
+
+	string= types.forceString( string );
+
+	if ( ! string ){
+		console.log( moduleName+ ': error, invalid or missing string argument! now returning a non-matching regexp.' );
+		return new RegExp('(?!.*)');
+	}
+
+	flags			= types.forceString( flags );
+	lower			= types.forceNumber( lower, 1 );
+	upper			= types.forceNumber( upper, 0 );
+
+	var limit	= ( upper && (upper > lower) ) ? (lower+ ','+ upper) : lower;
+
+	return new RegExp( '^['+ regEscape(string)+ ']{'+ limit+ '}'+ '$', flags );
+};
+// var limitedString= regEscape.limitOccur( 'only match 2 characters of this text!', 2 );
+// console.log( limitedString.test('2!') );
 
 
 module.exports= regEscape;
