@@ -1,11 +1,8 @@
 {
   "name": "reg-escape",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Escapes special characters in a string so it can be used with RegExp",
   "main": "reg-escape.min.js",
-  "dependencies": {
-    "types.js": "latest"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -24,25 +24,21 @@
 // SOFTWARE.
 //
 
-var
-	 types		= require( 'types.js' )
-	,moduleName	= 'reg-escape'
-;
-
-
 var regEscape= function( string ){
+	"use strict"
 
 	var escapedString= '';
 
-	for ( var index in string ){
-		var char= string[ index ];
-		escapedString+= ( ~regEscape.SPECIAL_CHARS.indexOf(char) ) ? '\\'+ char : char;
+	if ( typeof string === 'string' ){
+		for ( var index in string ){
+			var char= string[ index ];
+			escapedString+= ( ~regEscape.SPECIAL_CHARACTERS.indexOf(char) ) ? '\\'+ char : char;
+		}
 	}
 
 	return escapedString;
 };
-regEscape.SPECIAL_CHARS= [ '?', '\\', '[', ']', '(', ')', '*', '+', '.', '/', '|', '^', '$', '<', '>', '-', '&' ];
-
+regEscape.SPECIAL_CHARACTERS= [ '?', '\\', '[', ']', '(', ')', '*', '+', '.', '/', '|', '^', '$' ];
 
 
 module.exports= regEscape;
